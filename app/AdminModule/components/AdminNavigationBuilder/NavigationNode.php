@@ -56,10 +56,10 @@ class AdminNavigationNode extends Control
 	 * Gets an item from the naviagtion tree RECURSIVE, finds it anywhere
 	 * @param object $label, $items
 	 * @return NavigationNode|FALSE false if item not found
+	 * @author Martin Bazik    	 
 	 */
 	private function find($label, $items)
 	{
-        echo 'kokoot';
 		//$result = new AdminNavigationNode("","");
 		foreach ($items as $item) {
 			if ($item->label == $label) $result = $item;
@@ -81,7 +81,6 @@ class AdminNavigationNode extends Control
 	 */
 	public function getR($label)
 	{
-        var_dump($label);exit;
 		return $this->find($label, $this->items);
 	}
 
