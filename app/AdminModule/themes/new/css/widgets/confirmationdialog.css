@@ -1,0 +1,26 @@
+/* CSSTidy 1.3: Wed, 06 Jan 2010 07:36:14 -0700 */
+div.confirm_dialog {
+    -moz-border-radius:5px;
+    background:#4e4e4e;
+    border:5px solid #000;
+    color:#fff;
+    /*left:30%;*/
+    width: auto;
+    padding:10px;
+    position: fixed;
+    display: none;
+    /*top:300px;*/
+}
+
+div.confirm_dialog form table {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+div.confirm_dialog p {
+    font-weight:700;
+    text-align:left;
+    min-width: 200px;
+    clear: both;
+    display: block;
+}

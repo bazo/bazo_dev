@@ -1,0 +1,10 @@
+{$title = $data->category->title}
+{block #content}
+<h1>{_$title}</h1>
+<div id="category-description">{$data->category->description}</div>
+<div id="category-pages">
+	{foreach $data->pages as $page}
+		<a href="{$page->slug}" alt="{$page->title}" title="{$page->title}">{$page->title}</a>
+	{/foreach}
+</div>
+{/block}

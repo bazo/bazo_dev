@@ -1,0 +1,29 @@
+{$title = 'Menus'}
+{block #js}
+	{include #parent}
+	{widget js 'datagrid.js', 'menuitems.js'}
+{/block}
+{block #css}
+	{include #parent}
+	{widget css 'widgets/confirmationdialog.css', 'widgets/datagrid.css', 'menus.css', 'menuitems.css'}
+{/block}
+{block #content}
+	{widget page}
+	{widget confirmForm}
+{/block}
+@{block #forms}
+	{snippet form}
+		@{if $new == true}
+			<div id="menuEditor" class="ui-corner-all">
+				<h2>{_'New menu'}</h2>
+				@{widget formNewMenu}
+			</div>
+		@{/if}
+		@{if $edit == true}
+			<div id="menuEditor" class="ui-corner-all">
+				<h2>{_'Edit menu'} {$menu}</h2>
+				@{widget formEditMenu}
+			</div>
+		@{/if}
+	{/snippet}
+@{/block}

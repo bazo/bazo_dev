@@ -1,0 +1,45 @@
+<table>
+	<tr>
+		<th>Theme</th>
+		<td>{$activeTheme->name}</td>
+	</tr>
+	<tr>
+		<th>Author</th>
+		<td>{$activeTheme->author}</td>
+	</tr>
+	<tr>
+		<th>Description</th>
+		<td>{$activeTheme->description}</td>
+	</tr>
+	<tr>
+		<th>Tags</th>
+		<td>{$activeTheme->tags}</td>
+	</tr>
+</table>
+{foreach $themes as $theme }
+	<table>
+	<tr>
+		<th>Theme</th>
+		<td>{$theme['name']}</td>
+	</tr>
+	<tr>
+		<th>Author</th>
+		<td>{$theme['author']}</td>
+	</tr>
+	<tr>
+		<th>Description</th>
+		<td>{$theme['description']}</td>
+	</tr>
+	<tr>
+		<th>Tags</th>
+		<td>{$theme['tags']}</td>
+	</tr>
+	<tr><td colspan="2">
+		{if $mode == 'admin'}
+		<a class="ajax" href="{link activateAdminTheme! theme => $theme['folder']}">activate</a>
+		{else}
+		<a class="ajax" href="{link activateSiteTheme! theme => $theme['folder']}">activate</a>
+		{/if}
+		</td></tr>
+</table>
+{/foreach}

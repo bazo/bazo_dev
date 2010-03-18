@@ -1,0 +1,319 @@
+/* CSSTidy 1.3: Sat, 09 Jan 2010 03:26:04 -0700 */
+html, body{
+	width: 100%;
+	height: 100%;
+	/*overflow: hidden;*/
+}
+.button{
+	border: 1px solid #444444; background: #222222 url(images/ui-bg_highlight-soft_35_222222_1x100.png) 50% 50% repeat-x !important; font-weight: normal; color: #eeeeee; outline: none;
+	-moz-border-radius: 6px; -webkit-border-radius: 6px;
+}
+.button:hover{
+	border: 1px solid #0b93d5; background: #003147 url(images/ui-bg_highlight-soft_33_003147_1x100.png) 50% 50% repeat-x !important; font-weight: normal; color: #ffffff; outline: none;
+	cursor: pointer !important;
+}
+.button{
+	padding: 5px;
+}
+#aside
+{
+  float:left;
+  min-height:300px;
+  width:10%;
+}
+
+#aside #search fieldset
+{
+  border:1px solid #bfbfbf;
+  padding:7px 10px;
+}
+
+#cols
+{
+  min-height:300px;
+  width:100%;
+}
+
+#content
+{
+  margin-left:15px;
+  margin-top:10px;
+}
+
+#content .ui-tabs .ui-tabs-panel
+{
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+}
+
+#content .ui-tabs-nav
+{
+  padding:0;
+}
+
+#content .ui-widget-content
+{
+  border:none!important;
+}
+
+#content .ui-widget-header
+{
+  background:none;
+  border:none;
+}
+
+#dashboard
+{
+  width:100%;
+  height: 100%;
+}
+#footer
+{
+  background:url(design/footer.gif) repeat-x #303030;
+  color:#cfcfcf;
+  font:85%/1.2 tahoma,sans-serif;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-right: 0px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  clear: both;
+}
+#footer p{
+	left: 20px;
+	position: relative;
+}
+#footer a
+{
+  color:#707070;
+}
+
+#footer a:hover,#footer a:active,#footer a:focus,#aside #search fieldset a
+{
+  color:#303030;
+}
+
+#wrapper #tray input#frmlangSelector-ok
+{
+  visibility:hidden !important;
+  display: none !important;
+}
+
+#main
+{
+	background:#fff;
+	float:right;
+	min-height: 450px;
+	width:90%;
+	position: relative;
+	top: -1px;
+	right: 0;
+	bottom: 0;
+}
+
+#main h1
+{
+  background:url(design/content-h1.gif) repeat-x #303030;
+  color:#fff;
+  font-size:180%;
+  margin:0;
+  padding:10px 15px;
+}
+
+#main h2
+{
+  color:#0085cc;
+  font-size:160%;
+}
+
+#main h3
+{
+  font-size:140%;
+}
+
+#main h4,.bigger
+{
+  font-size:120%;
+}
+
+#main h5,h6
+{
+  font-size:100%;
+}
+
+fieldset legend
+{
+  background:#FFF;
+  color:#0085cc;
+  font-size:120%;
+  font-weight:700;
+}
+#search-form #frmformsearch-search_query
+{
+  float:left;
+  margin-right:5px;
+  width:75%;
+}
+
+#tray
+{
+  background:url(design/tray.gif) repeat-x #303030;
+  color:#cfcfcf;
+  font:85%/1.2 tahoma,sans-serif;
+  padding-top:12px;
+  width:auto;
+}
+
+#tray #logout
+{
+  background:url(design/tray-logout.gif) no-repeat 0 50%;
+  padding-left:18px;
+  text-transform:uppercase;
+}
+
+#tray #switcher
+{
+  margin-right:15px;
+}
+
+#tray #switcher img
+{
+  border:0;
+  display:block;
+  float:left;
+  height:16px;
+  width:16px;
+}
+
+#tray #title-tab
+{
+  background:#fff;
+  float:left;
+  height:auto;
+  width:auto;
+}
+
+#tray #title-tab h1
+{
+  color:#303030;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:5px;
+}
+
+#tray .box form
+{
+  width:auto;
+}
+
+#tray .f-right
+{
+  float:right!important;
+  margin-right:15px;
+  text-align:left;
+}
+
+#tray .f-right form
+{
+  float:left;
+  margin-right:10px;
+}
+
+#tray a
+{
+  color:#fff;
+  text-decoration:none;
+}
+
+#tray a:hover
+{
+  text-decoration:underline;
+}
+
+#tray div.f-left
+{
+  float:left;
+  height:auto;
+  margin-left:15px;
+  width:10%;
+}
+
+#tray p,#footer p,#main dl dd,#aside #search fieldset p
+{
+  margin:0;
+}
+
+#wrapper
+{
+  background:#303030;
+  border:1px solid #000;
+  margin:20px;
+  min-width:980px;
+  padding:0;
+  width:auto;
+  height: auto;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+body
+{
+  color:#303030;
+  font:.8em/1.5 arial, sans-serif;
+}
+
+div#snippet--flash, .flash
+{
+  display:none;
+}
+
+fieldset
+{
+  border:1px solid #ccc;
+  margin:10px 0;
+  padding:10px;
+  position:relative;
+}
+#snippet-page-Link{
+	width: auto !important;
+        margin-bottom: 10px;
+}
+#snippet-page-Link a{
+	clear: both;
+	min-width: 100px;
+	max-width: 150px;
+	width: auto;
+	height: 32px;
+	display: block;
+	text-decoration: none;
+}
+#snippet-page-Link a #create-new-link{
+	width: 100%;
+}
+#snippet-page-Link a #create-new-link #icon{
+	display: block;
+	height: 32px;
+	width: 32px;
+	float: left;
+	background: url(images/icons/new.png);
+}
+#snippet-page-Link a #create-new-link #icon-install{
+	display: block;
+	height: 32px;
+	width: 32px;
+	float: left;
+	background: url(images/icons/download.png);
+}
+#snippet-page-Link a #create-new-link span{
+	position: relative;
+	top: 5px;
+        left: 10px;
+        color: #165CA3;
+        font-size: 150%;
+        font-weight: 700;
+}
+ul.error li{
+    list-style-type: none;
+    color: #111111;
+}

@@ -1,0 +1,16 @@
+{*
+Available vars:
+    pages
+    categories
+    menus
+    modules
+ *}
+{$title = 'Dashboard'}
+{block #content}
+<div id="dashboard">
+    {_'You have %d page', count($pages)}
+    {_'You have %d category', count($categories)}
+    {_'You have %d menu', count($menus)}
+    {_'You have %d module', count($modules)}
+</div>
+{/block}

@@ -1,0 +1,29 @@
+ .blue, .green { float:left; width:170px; margin-top:50px;}
+
+.blue { margin-right:10px; background:#6dd6e9 url(../images/bluetopbg.jpg) no-repeat;  text-transform:uppercase; font:normal 20px/20px "Myriad Pro", Arial, Helvetica, sans-serif; padding:10px;}
+.green { background:#3b8815 url(../images/greenheader.jpg) no-repeat; padding:10px;}
+.greenheader {  text-transform:uppercase; font:normal 20px/20px "Myriad Pro", Arial, Helvetica, sans-serif; border-bottom: 1px dashed #62a044; padding-bottom:15px; }
+.green p{ color:#FFF; font:normal 14px/17px "Myriad Pro", Arial, Helvetica, sans-serif; margin-bottom:20px;}
+
+
+
+.curlyopen, .curlyclose { width:43px; height:156px; float:left;}
+.curlyopen { background:url(../images/curlyopen.jpg) no-repeat;} 
+.curlyclose { background:url(../images/curlyclose.jpg) no-repeat;}
+
+.blueContaner { background:#9fbfcb url(../images/bluebgsummry.jpg) repeat-x top; margin-top: -10px; padding-top: 10px; width:100%; float:left; padding-top:50px; color:#3a5c69;}
+.blueleftblock { float:left; width:228px; border-right: 1px  dashed #75a4b6; padding-right:25px;}
+.bluerightblock { float:left; width:670px; margin-left:30px; }
+
+.tabslidholder { float:left; width:670px; padding-bottom:15px;}
+.tagHolder { float:left; text-align:center;text-align:center; color:#FFF; width:105px; text-transform:uppercase; margin-bottom:30px; margin-right:20px;}
+.tagtext { background:url(../images/bgtag.jpg) repeat-x; height:18px; padding: 6px 20px; }
+.arrow{ background:url(../images/downarrow.jpg) no-repeat  top center; width:15px; height:13px; margin:0 auto;  }
+.slid { float:left;}
+.slidheaer { color:#29353a; font:normal 36px/38px "Myriad Pro", Arial, Helvetica, sans-serif; float:left; padding:30px 0;}
+.slid p { font:normal 24px/31px "Myriad Pro", Arial, Helvetica, sans-serif; margin-top:35px;  }
+.siderstrip { width:670px; float:left; height:35px; background:url(../images/mainbgstrip.jpg) repeat-x; margin-top:30px;}
+.btnleft { float:left; margin-left:11px;}
+.btnright { float:left; margin-left:10px;}
+
+.summryblock {background: #ebe6db url(../images/blue_pyramid_inverse.jpg) repeat-x top;}

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Administration module" />
+        {block #css}
+            {widget css 'jquery.ui.css', 'widgets/jquery.jgrowl.css', 'layout/reset.css', 'layout/main.css', 'layout/menu.css'}
+        {/block}
+        {block #js}
+            {widget js 'jquery-1.4.2.min.js', 'jquery-ui-1.7.2.custom.min.js', 'jquery.cookie.js', 'jquery.livequery.js', 'jquery.blockUI.js', 'jquery.jgrowl.js', 'jquery.ajaxform.js', 'effects.js', 'jquery.nette.custom.js', 'menu.js', 'LiveFormValidation.js'}
+        {/block}
+        <link rel="shortcut icon" href="{$baseUri}mokuji.ico" />
+        <title>Admin</title>
+    </head>
+<body>
+<div id="wrapper" class="ui-corner-all">
+    <!-- Tray -->
+    <div id="tray" class="box">
+
+        <div class="f-left">
+            {_"site"}:&nbsp;<a href="http://{$website}{$baseUri}" target="_blank"><strong>{$website}</strong></a>
+        </div>
+        <div id="title-tab" class="ui-corner-top">
+            <h1>{_$title}</h1>
+        </div>
+            <div class="f-right">{widget langSelector}<span class="user">{_"User"}:</span> <strong><a href="{link :Admin:MyProfile:}">{$user_data['name']}</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a href="{plink logout!}" id="logout">{_'logout'}</a></strong>
+        </div>
+
+    </div> <!--  /tray -->
+
+    <div id="cols">
+        <div id="aside">
+            <div id="menu">
+                                {snippet menu}
+                                    {widget menu}
+                                {/snippet}
+            </div>
+        </div>
+
+        <div id="main" class="ui-corner-tl">
+            {snippet flash}
+                {foreach $flashes as $flash}<div>{$flash->message}</div>{/foreach}
+            {/snippet}
+            <div id="content">
+                @{include #content}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div id="footer">
+        <p><a href="http://bazo.sk/mokuji">Mokuji CMS</a> by <a href="mailto:mokuji@bazo.sk?subject=Mokuji CMS">Martin Bažík</a> 2010 &copy;</p>
+    </div> <!-- /footer -->
+</div> <!-- /main -->
+@{block #forms}
+    {snippet formLoginAjax}
+    {/snippet}
+@{/block}
+</body>
+</html>

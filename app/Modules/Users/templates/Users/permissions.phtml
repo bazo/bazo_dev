@@ -1,0 +1,21 @@
+{assign $title 'Permissions'}
+{block #js}
+    {include #parent}
+    {widget js 'datagrid.js'}
+{/block}
+{block #css}
+    {include #parent}
+    {widget css 'widgets/confirmationdialog.css', 'widgets/datagrid.css', 'categories.css'}
+{/block}
+{block #content}
+{widget datagridRoles}
+{/block}
+@{block #forms}
+    {snippet form}
+        @{if $edit == true}
+            <div id="permissionEditor" class="ui-corner-all">
+                {widget formPermissionEditor}
+            </div>
+        @{/if}
+    {/snippet}
+@{/block}

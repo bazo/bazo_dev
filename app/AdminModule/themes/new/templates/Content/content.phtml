@@ -1,0 +1,10 @@
+{$title = 'Content'}
+{block #content}
+<div id="content_items">
+{foreach $items as $item}
+	<a href="{$item->url}"><div class="content_item">
+		<p>{_$item->label}</p>
+	</div></a>
+{/foreach}
+</div>
+{/block}

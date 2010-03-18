@@ -1,0 +1,30 @@
+#login-form{
+	margin: 0 auto;
+	width: 300px;
+	position: absolute;
+	top: 20%;
+	left: 40%;
+}
+#login-form form{
+	width: 100%;
+}
+#login-form p{
+	width: 100%;
+	text-align: center;
+}
+#login-form p:first-child{
+	background:url(design/tray.gif) repeat-x #303030;
+	color:#cfcfcf;
+	font:85%/1.2 tahoma,sans-serif;
+	padding-top: 15px;
+	padding-bottom: 15px;
+} 
+input[type="submit"]{
+	border: 1px solid #444444; background: #222222 url(images/ui-bg_highlight-soft_35_222222_1x100.png) 50% 50% repeat-x !important; font-weight: normal; color: #eeeeee; outline: none;
+	-moz-border-radius: 6px; -webkit-border-radius: 6px;
+        padding: 5px;
+}
+input[type="submit"]:hover{
+	border: 1px solid #0b93d5; background: #003147 url(images/ui-bg_highlight-soft_33_003147_1x100.png) 50% 50% repeat-x !important; font-weight: normal; color: #ffffff; outline: none;
+	cursor: pointer !important;
+}

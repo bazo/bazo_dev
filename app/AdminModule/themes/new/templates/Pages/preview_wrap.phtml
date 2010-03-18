@@ -1,0 +1,28 @@
+{*  
+	{widget js 'jquery-1.3.2.js', 'jquery-ui-1.7.2.custom.min.js'} {*  'ixedit.js'*}
+<script type="text/javascript">
+	$(function() {
+		
+		jQuery.ajaxStart( function(){ $.blockUI(block_options)}).ajaxStop($.unblockUI);
+		
+		$("form").live('submit',function (event) {
+                $(this).ajaxSubmit();
+				event.preventDefault();
+        });
+	
+	    $("form :submit").live("click",function (event) {
+	        $(this).ajaxSubmit();
+			event.preventDefault();
+	    });
+	});
+
+</script>
+*}
+{snippet preview}
+<div id="preview-toolbar">
+{widget formPreviewToolbar}
+</div>
+{*  !$response*}
+
+	<iframe id="frame-editor" src="{link preview!}" style="width: 100%; height: 100%;" width="100%" height="100%" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0"></iframe>
+{/snippet}

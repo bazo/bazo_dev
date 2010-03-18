@@ -1,0 +1,9 @@
+{extends $layout}
+{assign $title $data->title}
+{block #content}
+
+<h1>{_$title}</h1>
+<div id="page-content">
+	{!$data->content}
+</div>
+{/block}

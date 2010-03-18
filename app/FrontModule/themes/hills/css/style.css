@@ -1,0 +1,86 @@
+@charset "utf-8";
+/*------------------------------Reset style Starts-------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline;}
+/* remember to define focus styles! */
+:focus { outline: 0;}body { line-height: 1; color: #000000; background: white; font-family:Arial, Helvetica, sans-serif; font-size:12px}
+ul { list-style: none;}
+/* tables still need 'cellspacing="0"' in the markup */
+table { border-collapse: separate; border-spacing: 0;}
+caption, th, td { text-align: left; font-weight: normal;}
+blockquote:before, blockquote:after,q:before, q:after { content: "";}
+blockquote, q { quotes: "" "";}
+strong { font-weight:bold;}
+img { margin:0;}
+a:link {text-decoration: none; color:#333}
+/*------------------------------Reset style Ends-------------------------------*/
+iclear{ clear:both; width:100%;}
+body { font: normal 14px/16px "Myriad Pro", Arial, Helvetica, sans-serif; background-color:#f7f1e3;}
+#wrapper { margin:0 auto; width:1020px;}
+.innerwrapper { width:962px; margin:0 auto;}
+
+#header { height:137px;  width:100%; float:left; background:#f0e8d4 url(images/headerbg.jpg) repeat-x bottom; }
+.logo { background:url(images/logobg.png) no-repeat; width:258px; height:105px; margin-left:26px; text-align:center; float:left;}
+.logo h1 { color:#FFF; font:normal 32px/25px "Myriad Pro", Arial, Helvetica, sans-serif; padding-top:45px; text-transform:uppercase;}
+.logo p  { color:#aaa780;}
+
+.nav { float:right; margin-top:71px; margin-right:57px}
+.nav ul li { text-transform:uppercase; display:inline; padding: 0 20px;}
+.nav ul li a { color:#4d300f;text-decoration:none;}
+
+#containertopbg { background:url(images/containerbgtop.png) no-repeat scroll 31px 27px; float:left; width:100%;}
+#containerbottombg {  background:url(images/containerbgbottom.png) no-repeat bottom; float:left; width:100%;}
+#container { float:left; width:100%; color:#4d300f; padding-top:68px; padding-bottom:35px;}
+
+.block1 , .block2 { float:left; margin-left:30px;} 
+.block1 {  width:518px;}
+.block1 h1 {  font:normal 36px/38px "Myriad Pro", Arial, Helvetica, sans-serif;margin-bottom:15px; }
+.block1 p {  font:normal 24px/31px "Myriad Pro", Arial, Helvetica, sans-serif; }
+.block2 { width:390px; color:#FFF;}
+.block2 p {  font:normal 18px/25px "Myriad Pro", Arial, Helvetica, sans-serif; color:#4d300f; margin-top:15px; }
+.block2heder { background:url(images/block2headbg.jpg) no-repeat; width:380px; height:47px; text-transform:uppercase; padding-left:10px; padding-top:17px;}
+.block2heder h1 {  font:normal 24px/20px "Myriad Pro", Arial, Helvetica, sans-serif;margin-bottom:15px; }
+.block2heder span {  font:normal 18px/18px "Myriad Pro", Arial, Helvetica, sans-serif; }
+.blue, .green { float:left; width:170px; margin-top:50px;}
+
+.blue { margin-right:10px; background:#6dd6e9 url(images/bluetopbg.jpg) no-repeat;  text-transform:uppercase; font:normal 20px/20px "Myriad Pro", Arial, Helvetica, sans-serif; padding:10px;}
+.green { background:#3b8815 url(images/greenheader.jpg) no-repeat; padding:10px;}
+.greenheader {  text-transform:uppercase; font:normal 20px/20px "Myriad Pro", Arial, Helvetica, sans-serif; border-bottom: 1px dashed #62a044; padding-bottom:15px; }
+.green p{ color:#FFF; font:normal 14px/17px "Myriad Pro", Arial, Helvetica, sans-serif; margin-bottom:20px;}
+
+.summryblock {width:100%; height:156px; float:left; background: #ebe6db url(images/bluebgsummry.jpg) repeat-x bottom; padding:30px 0;}
+.summryblock1, .summryblock2, .summryblock3 { color:#4d300f; float:left; height:130px; margin-top:20px;}
+.summryblock1, .summryblock2 { border-right: 1px dashed #4d300f;}
+.summryblock1 h2, .summryblock2 h2, .summryblock3 h2 { font:normal 18px/24px "Myriad Pro", Arial, Helvetica, sans-serif; margin-bottom:13px; } 
+.summryblock1 p, .summryblock2 p, .summryblock3 p { font:normal 16px/24px "Myriad Pro", Arial, Helvetica, sans-serif; } 
+.summryblock1 { width:233px; padding: 0 37px 0 31px;}
+.summryblock2 { width:214px; padding: 0 34px 0 44px;}
+.summryblock3 { width:230px; padding: 0 0px 0 44px;}
+
+.curlyopen, .curlyclose { width:43px; height:156px; float:left;}
+.curlyopen { background:url(images/curlyopen.jpg) no-repeat;} 
+.curlyclose { background:url(images/curlyclose.jpg) no-repeat;}
+
+.blueContaner { background:#9fbfcb; width:100%; float:left; padding-top:50px; padding-bottom:20px; color:#3a5c69;}
+.blueleftblock { float:left; width:228px; border-right: 1px  dashed #75a4b6; padding-right:25px;}
+.text{  float:left; margin: 20px 0; width:228px;}
+.text h1 {font:normal 18px/15px "Myriad Pro", Arial, Helvetica, sans-serif;margin-bottom:25px; color:#FFF; }
+.text p {font:normal 14px/16px "Myriad Pro", Arial, Helvetica, sans-serif;}
+
+.bluerightblock { float:left; width:670px; margin-left:30px; }
+.tabslidholder { float:left; width:670px; padding-bottom:15px;}
+.tagHolder { float:left; text-align:center;text-align:center; color:#FFF; width:105px; text-transform:uppercase; margin-bottom:30px; margin-right:20px;}
+.tagtext { background:url(images/bgtag.jpg) repeat-x; height:18px; padding: 6px 20px; }
+.arrow{ background:url(images/downarrow.jpg) no-repeat  top center; width:15px; height:13px; margin:0 auto;  }
+.slid { float:left;}
+.slidheaer { color:#29353a; font:normal 36px/38px "Myriad Pro", Arial, Helvetica, sans-serif; float:left; padding:30px 0;}
+.slid p { font:normal 24px/31px "Myriad Pro", Arial, Helvetica, sans-serif; margin-top:35px;  }
+.siderstrip { width:670px; float:left; height:35px; background:url(images/mainbgstrip.jpg) repeat-x; margin-top:30px;}
+.btnleft { float:left; margin-left:11px;}
+.btnright { float:left; margin-left:10px;}
+
+.card{ float:left; width:660px; margin-top:60px;}
+.card h1 { color:#FFF; text-transform:uppercase; font:normal 22px/25px "Myriad Pro", Arial, Helvetica, sans-serif;}
+.cardlist {float:left; width:670px;margin-top:40px;}
+.cardlist ul li { display:inline; float:left; padding-right:21px; color:#29353a; font-weight:bold;}
+.cardlist ul li p { color:#3a5c69; font-weight:normal; }
+#footer { clear:both; width:95%; margin: 30px auto 0;}

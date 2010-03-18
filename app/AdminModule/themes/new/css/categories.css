@@ -1,0 +1,44 @@
+#categoryEditor{
+	position:absolute;
+	top: 5%;
+	width: 20%;
+	max-height: 90%;
+	background: #ffffff;
+	border: 5px solid #000;
+	padding: 20px;
+	padding-top: 10px;
+	right: 0;
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
+	z-index: 900;
+}
+#categoryEditor table th
+{
+	vertical-align: top;
+}
+#categoryEditor input, #categoryEditor textarea{
+
+	border: 1px solid #CCCCCC;
+	padding: 2px 0;
+}
+#categoryEditor input:hover, #categoryEditor input:focus, #categoryEditor textarea:hover, #categoryEditor textarea:focus{
+	background-color: #F6F7FA;
+}
+#categoryEditor table th{
+	color: #165CA3;
+}
+fieldset#buttons{
+	float: none; clear: both;
+	border: none;
+	margin-bottom: 20px;
+        position: static;
+}
+fieldset#buttons table{
+	margin: 0 auto;
+}
+#categoryEditor form fieldset#buttons table tbody tr td input#frmformEditPage-btnPublish, #categoryEditor form fieldset#buttons table tbody tr td input#frmformNewPage-btnPublish{
+	background: none !important;
+	background-color: #155cc2 !important;
+	padding: 10px;
+}

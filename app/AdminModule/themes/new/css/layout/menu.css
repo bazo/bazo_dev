@@ -1,0 +1,93 @@
+#menu
+{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  color: #fff;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 80%;
+}
+
+#menu ul
+{
+  list-style-type:none;
+}
+
+#menu ul li
+{
+	width: 100%;
+	border: 1px solid #fff;
+	margin-top: 10px;
+        background-color: #fff;
+        padding-bottom: 2px;
+}
+#menu ul li a
+{
+	display: block;
+	color: #000;
+	width: 100%;
+	padding-left: 35px;
+	text-decoration: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+        font-weight: 800;
+
+}
+#menu ul li a:hover{
+    position: relative;
+    left: 10px;
+    font-weight: 900;
+}
+#menu ul li ul
+{
+	display: none;
+}
+#menu ul li.active ul
+{
+	display: block;
+}
+#menu ul li.active ul li a
+{
+	height: 100%;
+}
+#menu ul li.dashboard
+{
+    background: url(images/icons/desktop.png) no-repeat;
+    background-color: #fff;
+}
+#menu ul li.pages
+{
+    background: url(images/icons/document.png) no-repeat;
+    background-color: #fff;
+}
+#menu ul li.categories
+{
+    background: url(images/icons/categories.png) no-repeat;
+    background-color: #fff;
+}
+#menu ul li.menus
+{
+    background: url(images/icons/menu.png) no-repeat;
+    background-color: #fff;
+}
+#menu ul li.themes
+{
+    background: url(images/icons/coherence.png) no-repeat;
+    background-color: #fff;
+}
+#menu ul li.settings
+{
+    background: url(images/icons/settings.png) no-repeat;
+    background-color: #fff;
+}
+#menu ul li.modules
+{
+    background: url(images/icons/modules.png) no-repeat;
+    background-color: #fff;
+}
+#menu ul li.users
+{
+    background: url(images/icons/users.png) no-repeat;
+    background-color: #fff;
+}

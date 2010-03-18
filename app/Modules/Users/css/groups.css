@@ -1,0 +1,35 @@
+#permissionEditor{
+    position: absolute;
+    z-index: 50;
+    width: 80%;
+    height: 80;
+    overflow: visible;
+    overflow: auto;
+    margin: 0 auto;
+    top: 5%;
+    max-height: 90%;
+    background: #ffffff;
+    border: 5px solid #000;
+    padding: 20px;
+    padding-top: 10px;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 900;
+}
+#permissionEditor fieldset{
+    float: left;
+    margin: 5px;
+    width: 17%;
+}
+fieldset#buttons{
+    float: none; clear: both;
+    border: none;
+    margin-bottom: 20px;
+    position: static;
+    width: 100%;
+}
+fieldset#buttons table{
+    margin: 0 auto;
+}

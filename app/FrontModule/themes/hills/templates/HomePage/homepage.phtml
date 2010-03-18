@@ -1,0 +1,6 @@
+{assign $templ '../Page/'.$data->content_type.'-'.$data->template.'.phtml'}
+{extends $templ}
+{assign $title $data->title}
+{block #content}
+	{include #parent}
+{/block}

@@ -1,0 +1,21 @@
+{$title = 'Search result for '.$query}
+{block #content}
+<h1>{_$title}</h1>
+<div id="search-results">
+	{if count($data)}
+		{foreach $data as $result}
+			<div class="search-result">
+				<p><a href="
+				{if $result->cat_slug != ''}
+					{link Page:pageView category=> $result->cat_slug, page => $result->page_slug}
+				{else}
+					{link Page:categoryView category=> $result->page_slug}
+				{/if}
+				">{$result->page_title}</a></p>
+				<div>{$result->page_content|stripTags}</div>
+			</div>
+		{/foreach}
+	{else}
+	{/if}
+</div>
+{/block}

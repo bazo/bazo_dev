@@ -1,0 +1,8 @@
+{extends '../@bluelayout.phtml'}
+{block #js}
+    {include #parent}
+    <script type="text/javascript" src="/js/widgets/LiveFormValidation.js"></script>      
+{/block}
+{block #content}
+    {!$data->content}
+{/block}

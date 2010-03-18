@@ -1,0 +1,20 @@
+{$title = 'Menus'}
+{block #js}
+	{include #parent}
+	{widget js 'datagrid.js'}
+{/block}
+{block #css}
+	{include #parent}
+	{widget css 'widgets/confirmationdialog.css'}
+{/block}
+{* Contains some snippet magic *}
+@{block #content}
+	<h2>{_"Create new menu"}</h2>
+	{snippet form}
+		{widget formNewMenu}
+	{/snippet}
+	{snippet grid}
+		{widget grid}
+	{/snippet}
+	@{widget confirmForm}
+@{/block}

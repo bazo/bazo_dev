@@ -1,0 +1,146 @@
+#dragDropMenu a {
+	cursor: pointer;
+	text-decoration: none;
+	color: #000;
+}
+#dragDropMenu, #dragHelper {
+	display: block;
+	margin: 0;
+	list-style: none;
+}
+#dragHelper {
+	background: #eee;
+}
+#dragDropMenu li ul{
+	padding-left: 20px;
+}
+#dragDropMenu ul, #dragHelper ul {
+	font-size: 1em;
+	list-style-type: none;
+}
+#dragDropMenu li, #dragHelper li {
+	display: block;
+	width: 100%;
+	clear: both;
+}
+#dragDropMenu dl, #dragHelper div {
+	position: relative;
+	display: block;
+	height: 19px;
+	border-top: 1px solid #eee;
+	padding-top: 1px;
+	background: #fff;
+}
+#dragDropMenu dt, #dragHelper dt {
+	float: left;
+	font-weight: bold;
+	font-size: 1.1em;
+	line-height: 1em;
+	margin-left: 16px;
+	padding: 0 0 0 1px;
+}
+#dragDropMenu dd, #dragHelper dd {
+	float: left;
+}
+#dragDropMenu .actions, #dragHelper .actions {
+	display: none;
+	padding: 3px 2px 0 5px;
+}
+#dragDropMenu .status, #dragHelper .status {
+	position: absolute;
+	top: 3px;
+	right: 0;
+}
+#dragDropMenu #root li ul li dl:hover dd, #dragDropMenu #root li ul li dd:hover {
+	display: block;
+}
+#dragDropMenu dd strong, #dragHelper dd strong {
+	display: none;
+}
+#dragDropMenu a, #dragHelper a {
+	border: none;
+}
+#dragDropMenu .expander, #dragHelper .expander {
+	position: absolute;
+	left: 0;
+	top: 4px;
+	width: 7px;
+	height: 7px;
+}
+#dragDropMenu .liOpen, #dragHelper .liOpen {
+	background: url(images/li.gif) left repeat-y;
+}
+#dragDropMenu .liOpen .expander, #dragHelper .liOpen > dl > .expander {
+	display: block;
+	width: 15px;
+	height: 1em;
+	background: url(images/excol_open.gif) 50% 50% no-repeat;
+}
+#dragDropMenu .liClosed .expander, #dragHelper .liClosed > dl > .expander {
+	display: block;
+	width: 15px;
+	height: 1em;
+	background-color: #000;
+	background: url(images/excol_closed.gif) 50% 50% no-repeat;
+}
+#dragDropMenu .liClosed ul, #dragHelper .liClosed ul {
+	display: none;
+}
+.move, .delete, .addChild {
+	display: block;
+	float: left;
+	width: 16px;
+	height: 16px;
+	text-indent: -5000px;
+	margin: 0 1px 0 0;
+	background: top left no-repeat;
+}
+.actions * {
+	cursor: pointer;
+}
+.move {
+	background-image: url(images/move.png);
+}
+.delete {
+	background-image: url(images/delete.png);
+}
+.addChild {
+	background-image: url(images/addChild.png);
+}
+#sortHelper {
+	height: 1px !important;
+	background: #000;
+	margin: 0 !important;
+	padding: 0;
+	position: relative;
+	z-index: 100;
+}
+#sortHelper + li {
+	margin-top: 0;
+}
+#dropMenu {
+	background: #333;
+	color: #eee;
+	position: absolute;
+	display: none;
+	z-index: 1000;
+}
+#dropMenu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+}
+#dropMenu li {
+	margin: 0;
+	padding: 5px 10px;
+	width: 100px;
+	cursor: pointer;
+	font-weight: bold;
+}
+#dragDropMenu .dropzone {
+	height: 6px;
+	background-color: #fff;
+	/*border: 4px solid #fff;*/
+        font-size: 10px;
+}

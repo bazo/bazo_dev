@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf8"?>
+{dump $data}
+<rsss version="2.0">
+   <channel>
+      <title>test</title>
+      <link>http://localhost{$baseUri}</link>
+      <description>{_'All pages'}</description>
+      <language>{$lang}</language>
+      <pubDate>{$now|date:'%d.%m.%Y'}</pubDate>
+      <generator>Mokuji</generator>
+	  <category>{_'all'}</category>
+	  {foreach $data as $page}
+      <item>
+
+         <title>{$page->title}</title>
+		 {if $page->category_id != 0}
+         <link>{link :Front:Page:pageView category => $page->category->slug, page=> $page->slug}</link>
+		 {else}
+		 	<link>{link :Front:Page:categoryView category => $page->slug}</link>
+		 {/if}
+         <description>{$page->content|stripTags|truncate:50}</description>
+		 <category>{$page->category}</category>
+         <pubDate></pubDate>
+
+      </item>
+	  {/foreach}
+   </channel>
+</rss>

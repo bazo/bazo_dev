@@ -1,0 +1,29 @@
+{if count($menu_items) > 0}
+{foreach $menu_items as $item}
+{if $iterator->isFirst()}
+		<ul data-id="0">
+	{/if}	
+	<li class="liOpen" data-id="{$item->id}" data-level="{$item->level}" data-position="{$item->position}">
+		<dl>
+			<dt><a href=”#” class="expander">&nbsp;</a> <a href=”#” class="title">{$item->title}</a>
+			<i></>url: {$item->url}</i>
+			</dt>
+			<dd class="actions"><strong>Actions:</strong> 
+                <span class="move" title="Move">Move
+                </span>
+                <a href="{link itemDelete! item => $item->id}" class="delete"><span class="delete" title="Delete">Delete
+                </span></a>
+                {*<a href="#" class="addChild" title="Add Child">Add Child</a>*}
+              </dd> 
+		</dl>
+		{if count($item->items)}
+				{include $template->getFile() 'menu_items' => $item->items}
+			{/if}
+	</li>
+	{if $iterator->isLast()}
+				</ul>
+			{/if}
+	{/foreach}
+{else}
+{"No items"}
+{/if}

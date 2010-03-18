@@ -1,0 +1,37 @@
+{$title = 'Menu items'}
+{block #js}
+	{include #parent}
+	{widget js 'menuitems.js'}
+{/block}
+
+{block #css}
+	{include #parent}
+	{widget css 'menuitems.css'}
+{/block}
+{block #sidebar}
+	<div id="sidebar">
+		<ul id="menu-list">
+			<li><a href="{link menus:}">{_"Menus"}</a>
+				<ul>
+					{foreach $menus as $menu}
+						<li><a href="{link MenuItems: name => $menu->name}">{$menu->name}</a></li>
+					{/foreach}
+				</ul>
+			</li>
+		</ul>
+	</div>
+{/block}
+@{block #content}
+	{snippet form}
+        <div id="menuItemsEditor" class="ui-corner-all">
+		<h2>{$menu}</h2>
+		{snippet frmNewItem}
+			{widget formNewMenuItem}
+		{/snippet}
+		{snippet menuDragDrop}
+			{widget menuDragDrop $menu, $menu_id}
+		{/snippet}
+        </div>
+	{/snippet}
+
+@{/block}

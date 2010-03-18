@@ -1,0 +1,202 @@
+<?php
+/**
+ * Routing debugger template.
+ *
+ * @param string   $presenter
+ * @param array    $params
+ * @param string   $router
+ * @param array    $routers
+ */
+?>
+
+<style type="text/css">
+/* <![CDATA[ */
+
+#routingDebugger {
+	font: 90%/1.4 "Trebuchet MS", "Geneva CE", lucida, sans-serif;
+	position: fixed;
+	_position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 23179;
+	margin: 0;
+	width: auto;
+	color: black;
+	background: #f6f6f6;
+	border: 1px dotted gray;
+	opacity: .70;
+	filter: alpha(opacity=70);
+	max-height: 90%;
+	overflow: auto;
+}
+
+#routingDebugger:hover {
+	opacity: 1;
+	filter: none;
+}
+
+#routingDebuggerLink, #routingDebuggerClose {
+	color: black;
+	line-height: 1;
+	display: block;
+	text-decoration: none;
+	padding: 4px;
+	float: left;
+}
+
+#routingDebuggerLink:hover span.routingDebuggerLink {
+	text-decoration: underline;
+}
+
+#routingDebuggerLink:hover #routingDebuggerIcon {
+	color: #165ca3;
+}
+
+#routingDebuggerClose {
+	float: right;
+	*float: left;
+	font-weight: bold;
+}
+
+#routingDebuggerClose:hover {
+	color: red;
+}
+
+#routingDebuggerContent {
+	display: none;
+	padding: 0 4px 4px;
+	clear: both;
+}
+
+#routingDebugger h2 {
+	font-size: 100%;
+	color: black;
+	margin: 8px 0 4px;
+}
+
+#routingDebugger table {
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+}
+
+#routingDebugger table td, #routingDebugger table th {
+	color: #444;
+	background: #FFF;
+	border: 1px solid #CCC;
+	padding: 4px;
+	text-align: left;
+}
+
+#routingDebugger table th {
+	color: #165ca3;
+	background: #DDD;
+	font-size: 90%;
+}
+
+#routingDebugger .may, #routingDebugger .yes {
+	color: green;
+}
+
+#routingDebugger .yes {
+	font-weight: bold;
+}
+
+/* ]]> */
+</style>
+
+<div id="routingDebugger">
+	<a href="#" id="routingDebuggerLink">
+		<span id="routingDebuggerIcon">&#x25ba;</span>
+		<span class="routingDebuggerLink">Routing debugger</span>
+	</a>
+	<a href="#" id="routingDebuggerClose">×</a>
+
+	<div id="routingDebuggerContent">
+		<?php if (!empty($presenter)): ?>
+			<h2><?php echo htmlSpecialChars($presenter . ':' . (isset($params[Presenter::ACTION_KEY]) ? $params[Presenter::ACTION_KEY] : Presenter::$defaultAction)) ?></h2>
+
+			<?php if (empty($params)): ?>
+				<p>No parameters.</p>
+
+			<?php else: ?>
+				<table>
+				<thead>
+				<tr>
+					<th>Parameter</th>
+					<th>Value</th>
+				</tr>
+				</thead>
+				<tbody>
+				<?php foreach ($params as $key => $value): ?>
+				<tr>
+					<td><code><?php echo htmlSpecialChars($key) ?></code></td>
+					<td><code><?php echo htmlSpecialChars((string) $value) ?></code></td>
+				</tr>
+				<?php endforeach ?>
+				</tbody>
+				</table>
+			<?php endif ?>
+		<?php endif ?>
+
+		<!-- ~~~~~~~~~~~ -->
+
+		<?php if (empty($router)): ?>
+			<h2>Not matched</h2>
+
+		<?php else: ?>
+			<h2>Matched by <?php echo htmlSpecialChars($router) ?></h2>
+		<?php endif ?>
+
+		<!-- ~~~~~~~~~~~ -->
+
+		<?php if (empty($routers)): ?>
+			<p>No routes defined.</p>
+
+		<?php else: ?>
+			<table>
+			<thead>
+			<tr>
+				<th>Matched?</th>
+				<th>Class</th>
+				<th>Mask</th>
+				<th>Defaults</th>
+			</tr>
+			</thead>
+
+			<tbody>
+			<?php foreach ($routers as $router): ?>
+			<tr>
+				<td class="<?php echo $router['matched'] ?>"><?php echo $router['matched'] ?></td>
+				<td><code><?php echo htmlSpecialChars($router['class']) ?></code></td>
+				<td><code><strong><?php echo htmlSpecialChars($router['mask']) ?></strong></code></td>
+				<td><code>
+				<?php foreach ($router['defaults'] as $key => $value): ?>
+					<?php echo htmlSpecialChars($key), " = ", $value === NULL ? '<i>NULL</i>' : htmlSpecialChars((string) $value) ?><br>
+				<?php endforeach ?>
+				</code></td>
+			</tr>
+			<?php endforeach ?>
+			</tbody>
+			</table>
+		<?php endif ?>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+document.getElementById('routingDebuggerLink').onclick = function() {
+	var el = document.getElementById('routingDebuggerContent');
+	var collapsed = el.style.display != 'block';
+	el.style.display = collapsed ? 'block' : 'none';
+	document.getElementById('routingDebuggerIcon').innerHTML = String.fromCharCode(collapsed ? 0x25bc : 0x25ba);
+	return false;
+}
+
+document.getElementById('routingDebuggerClose').onclick = function () {
+	document.getElementById('routingDebugger').style.display = 'none';
+	return false;
+}
+/* ]]> */
+</script>

@@ -1,0 +1,15 @@
+{assign $title 'Modules'}
+{block #js}
+    {include #parent}
+    {widget js 'datagrid.js'}
+{/block}
+{block #css}
+    {include #parent}
+    {widget css 'widgets/datagrid.css', 'widgets/confirmationdialog.css','moduleinstaller.css'}
+{/block}
+{block #content}
+    {widget page}
+{/block}
+@{block #forms}
+    {snippet form}{/snippet}
+@{/block}

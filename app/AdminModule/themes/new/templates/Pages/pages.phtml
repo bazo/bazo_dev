@@ -1,0 +1,36 @@
+{$title = 'Pages'}
+{block #js}
+	{include #parent}
+	{widget js 'datagrid.js', 'shadowbox/shadowbox.js', 'jHtmlArea-0.7.0.min.js', 'pages.js'}
+{/block}
+{block #css}
+	{include #parent}
+	{widget css 'pages.css', 'widgets/jHtmlArea.css', 'elastic.css', 'shadowbox.css', 'preview.css', 'widgets/confirmationdialog.css', 'widgets/datagrid.css', 'jHtmlArea.css'}
+{/block}
+{block #content}
+	{widget page}
+    {widget confirmForm}
+{/block}
+@{block #forms}
+        
+	{snippet form}
+		@{if $new == true}
+            <script type="text/javascript">
+                  $('#frmformNewPage-content').htmlarea();
+            </script>
+			<div id="pageEditor" class="ui-corner-all">
+				<h2>{_'New page'}</h2>
+				@{widget formNewPage}
+			</div>
+		@{/if}
+		@{if $edit == true}
+            <script type="text/javascript">
+              $('#frmformEditPage-content').htmlarea();
+            </script>
+			<div id="pageEditor" class="ui-corner-all">
+				<h2>{_'Edit page'} {if isset($page)}{$page}{/if}</h2>
+				@{widget formEditPage}
+			</div>
+		@{/if}
+	{/snippet}
+@{/block}

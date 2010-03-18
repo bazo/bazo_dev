@@ -1,0 +1,34 @@
+{assign $title 'Groups permissions'}
+{block #js}
+    {include #parent}
+    {widget js 'datagrid.js'}
+{/block}
+{block #css}
+    {include #parent}
+    {widget css 'widgets/confirmationdialog.css', 'widgets/datagrid.css'}
+    {widget usersCss 'groups.css'}
+{/block}
+{block #content}
+{widget datagridRoles}
+{/block}
+@{block #forms}
+    {snippet form}
+        @{if $edit == true}
+            <script type="text/javascript">
+            $(document).ready(function(){
+                var max_height = 0;
+                $('#permissionEditor fieldset:not("#buttons")').each(function(index){
+                    var height = $(this).height();
+                    if(height > max_height) max_height = height;    
+                });
+                $('#permissionEditor fieldset:not("#buttons")').each(function(index){
+                    $(this).height(max_height);
+                });
+            });
+            </script>
+            <div id="permissionEditor" class="ui-corner-all">
+                {widget formPermissionEditor}
+            </div>
+        @{/if}
+    {/snippet}
+@{/block}

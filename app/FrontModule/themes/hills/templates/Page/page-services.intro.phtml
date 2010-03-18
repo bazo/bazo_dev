@@ -1,0 +1,74 @@
+{extends '../@bluelayout.phtml'} 
+{block #js}
+    {include #parent}
+    <script type="text/javascript" src="/js/widgets/jquery.featureList-1.0.0.js"></script>
+{/block}
+{block #css}
+    {include #parent}
+    <link rel="stylesheet" type="text/css" href="{$basePath}/css/widgets/services.css"/> 
+{/block}
+{block #content}
+    <script language="javascript">
+        $(document).ready(function() {
+
+            $.featureList(
+                $("#tabs li a"),
+                $("#output li"), {
+                    start_item    :    1
+                }
+            );
+
+            /*
+            
+            // Alternative
+
+            
+            $('#tabs li a').featureList({
+                output            :    '#output li',
+                start_item        :    1
+            });
+
+            */
+
+        });
+    </script>
+    <div id="feature_list">
+        <ul id="tabs">
+            <li>
+                <a href="javascript:;">
+                    <img src="/images/widgets/services.png" />
+                    <h3>Services</h3>
+                    <span>Lorem ipsum dolor sit amet consect</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="/images/widgets/programming.png" />
+                    <h3>Programming</h3>
+                    <span>Lorem ipsum dolor sit amet consect</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="/images/widgets/applications.png" />
+                    <h3>Applications</h3>
+                    <span>Lorem ipsum dolor sit amet consect</span>
+                </a>
+            </li>
+        </ul>
+        <ul id="output">
+            <li>
+                <img src="/images/widgets/sample1.jpg" />
+                <a href="#">See project details</a>
+            </li>
+            <li>
+                <img src="/images/widgets/sample2.jpg" />
+                <a href="#">See project details</a>
+            </li>
+            <li>
+                <img src="/images/widgets/sample3.jpg" />
+                <a href="#">See project details</a>
+            </li>
+        </ul>
+    </div>
+{/block}

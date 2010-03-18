@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf8"?>
+<rss version="2.0">
+   <channel>
+      <title>test</title>
+      <link>{link :Front:HomePage:homepage}</link>
+      <description>{$data->category->description}</description>
+      <language>{$lang}</language>
+      <pubDate>{$now|date:'%d.%m.%Y'}</pubDate>
+      <generator>Mokuji</generator>
+	  <category>{$data->category->title}</category>
+	  {foreach $data->pages as $page}
+      <item>
+
+         <title>{$page->title}</title>
+         <link>{link :Front:Page:pageView category=> $data->category->slug, page=> $page->slug}</link>
+         <description>{$page->content|stripTags|truncate:50}</description>
+		 <category>{$page->category}</category>
+         <pubDate></pubDate>
+
+      </item>
+	  {/foreach}
+   </channel>
+</rss>

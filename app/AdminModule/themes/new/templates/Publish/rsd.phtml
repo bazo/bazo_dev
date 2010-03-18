@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?> {* this is a hack, new nette supports the declaration without hack, but doesnt support tabcontrol  *}
+<rsd version="1.0" xmlns="http://archipelago.phrasewise.com/rsd">
+  <service>
+    <engineName>Mokuji</engineName>
+    <engineLink>http://bazo.sk/mokuji</engineLink>
+    <homePageLink>http://localhost/cms</homePageLink>
+    <apis>
+      <api name="WordPress" blogID="1" preferred="false" apiLink="{link :Admin:publish:}" />
+      <api name="MetaWeblog" blogID="1" preferred="true" apiLink="{link :Admin:publish:}" />
+      <api name="Blogger" blogID="1" preferred="false" apiLink="{link :Admin:publish:}" />
+    </apis>
+  </service>
+</rsd>

@@ -1,0 +1,22 @@
+{$title = 'Categories'}
+{block #js}
+	{include #parent}
+	{widget js 'datagrid.js'}
+{/block}
+{block #css}
+	{include #parent}
+	{widget css 'widgets/confirmationdialog.css', 'widgets/datagrid.css', 'categories.css'}
+{/block}
+{block #content}
+	{widget page}
+        {widget confirmForm}
+{/block}
+{block #forms}
+    {snippet form}
+        @{if $edit == true}
+            <div id="categoryEditor" class="ui-corner-all">
+                @{widget formCategory}
+            </div>
+        @{/if}
+    {/snippet}
+{/block}

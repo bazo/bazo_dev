@@ -1,0 +1,10 @@
+@{foreach $components as $name => $component}
+    {snippet $name}
+        {* @{? $component->renderContent();} *}
+        @{if $component->hasSnippets == true}
+            @{widget $name}
+        @{else}
+                {widget $name}
+        @{/if}
+    {/snippet}
+@{/foreach}
