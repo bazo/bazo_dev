@@ -39,7 +39,7 @@ class Front_PagePresenter extends Front_BasePresenter
     
     private function template($text) {
         $template = new StringTemplate();
-        $template->presenter = $template->control = Environment::getApplication()->getPresenter(); 
+        $template->presenter = $template->control = $this;//Environment::getApplication()->getPresenter(); 
         $template->registerFilter(new LatteFilter);
         $template->content = $text;
         return $template->__toString();

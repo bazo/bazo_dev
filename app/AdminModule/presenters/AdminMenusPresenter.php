@@ -38,22 +38,23 @@ class Admin_MenusPresenter extends Admin_SecurePresenter
             $form->addButton('btnClose','Close');
             $form->addSubmit('save','Save')->onClick[] = array($this, 'formNewMenuSubmitted');
             $form['save']->getControlPrototype()->class('ajax');
-            $form->setDefaults(array('name' => ''));
             return $form;
 	}
 	
 	public function createComponentFormEditMenu($name)
 	{
-            $data = $this->getRequest()->getParams();
-            if(isset($data['name'])) $menu_name = $data['name']; else $menu_name = '';
-            //$data = $this->model('menu')->getByName($menu_name);
+            $menu_id = $this->getParam('id');
+            
+            $templates = $this->model('Menu')->getTemplates();
+            $data = $this->model('Menu')->getById($menu_id);
+
             $form = new LiveForm($this, $name);
-            $form->addText('name', 'Name')->addRule(Form::FILLED, 'Please enter a name.');
-            $templates = $this->model('Menu')->getTemplates(); 
+            $form->addText('name', 'Name')->addRule(Form::FILLED, 'Please enter a name.')->setValue($data->name);
             $form->addSelect('template', 'Template', $templates);
+            $form->addHidden('id')->setValue($menu_id); 
+            $form->setDefaults($data);
             $form->addButton('btnClose','Close');
             $form->addSubmit('save','Save')->onClick[] = array($this, 'formEditMenuSubmitted');
-            $form->setDefaults(array('name' => $menu_name));
             return $form;
 	}
     
@@ -81,8 +82,10 @@ class Admin_MenusPresenter extends Admin_SecurePresenter
             $form = $button->getForm();
             $values = $form->getValues();
             $name = $values['name'];
+            unset($values['btnClose']);
             try
             {
+                fd($values);
                 $this->model('menu')->update($values);
                 $this->flash('Menu '.$name.' updated successfully');
                 $this->invalidateControl('form');
@@ -106,7 +109,7 @@ class Admin_MenusPresenter extends Admin_SecurePresenter
             $ds = $this->model('menu')->getDs();
             $grid->bindDataTable($ds);
 
-            $grid->keyName = 'name';
+            $grid->keyName = 'id';
             $grid->addColumn('name', 'Name')->addTextFilter();
             $grid['name']->formatCallback[] = array($this, 'createLink');
             // přidáme sloupec pro akce

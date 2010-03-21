@@ -23,7 +23,7 @@ class Admin_MenuModel extends Admin_BaseModel
 	
 	public function getById($id)
 	{
-		return db::select('*')->from('[:table:]')->where('id = %i', $id)->fetchAll();
+		return db::select('*')->from('[:table:]')->where('id = %i', $id)->fetch();
 	}
 	
 	public function getByName($name)
@@ -42,6 +42,11 @@ class Admin_MenuModel extends Admin_BaseModel
 		return db::getInsertId();
 	}
 	
+    public function update($values)
+    {
+        db::update(':table:', $values)->where('id = %i', $values['id'])->execute();
+    }
+    
 	public function getPairs($key = 'id', $value = 'name')
 	{
 		return db::select('*')->from('[:table:]')->fetchPairs($key, $value);

@@ -25,9 +25,11 @@
             </p>    
           </div></a>    
         <div class="nav">         
-        {menu 'navigation'}     
+        {menu 'navigation'} 
+        {searchBox}    
         </div>  
       </div>  
+      
             <div class="blueContaner">    
               <div class="innerwrapper">
                 {foreach $flashes as $flash}<div class="flash {$flash->type}">{$flash->message}</div>{/foreach}

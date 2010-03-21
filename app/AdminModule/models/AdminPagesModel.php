@@ -16,37 +16,37 @@ class Admin_PagesModel extends Admin_BaseModel
 {
 	protected $table = 'site_pages';
 	
-	public function getAll()
+	public function _getAll()
 	{
-		return db::select('*')->from('[:table:]')->fetchAll();
+        return db::select('*')->from('[:table:]')->fetchAll();
 	}
 	
-	public function getPairs($key = 'slug', $value = 'title')
+	public function _getPairs($key = 'slug', $value = 'title')
 	{
-		return db::select(':table:.title `page_title`, :table:.slug `page_slug`, :categories:.title `category_title`, :categories:.slug `category_slug`')->from('[:table:]')->leftJoin(':categories:')->on(':table:.category = :categories:.id')->where(':table:.homepage = 0')->orderBy(':table:.category ASC')->fetchAssoc('category_slug|page_title');
-	}
+        return db::select(':table:.title `page_title`, :table:.slug `page_slug`, :categories:.title `category_title`, :categories:.slug `category_slug`')->from('[:table:]')->leftJoin(':categories:')->on(':table:.category = :categories:.id')->where(':table:.homepage = 0')->orderBy(':table:.category ASC')->fetchAssoc('category_slug|page_title');
+    }
 	
-	public function getById($id)
-	{
-		return db::select(':table:.*,UNIX_TIMESTAMP(:table:.added) `added`, :categories:.id `category_id`, :categories:.title `category_title`, :categories:.slug `category_slug`')->from('[:table:]')->leftJoin(':categories:')->on(':table:.category = :categories:.id')->where(':table:.id = %i', $id)->fetch();
-	}
+	public function _getById($id)
+    {
+		return  db::select(':table:.*,UNIX_TIMESTAMP(:table:.added) `added`, :categories:.id `category_id`, :categories:.title `category_title`, :categories:.slug `category_slug`')->from('[:table:]')->leftJoin(':categories:')->on(':table:.category = :categories:.id')->where(':table:.id = %i', $id)->fetch();
+    }
 	
-	public function getByTitle($title)
+	public function _getByTitle($title)
 	{
 		return db::select('*')->from('[:table:]')->where('title = %s', $title)->fetch();
 	}
 	
-	public function getBySlug($slug)
+	public function _getBySlug($slug)
 	{
 		return db::select('*')->from('[:table:]')->where('slug = %s', $slug)->and('content_type = %s', 'page')->fetch();
 	}
 	
-	public function getRecent($count)
+	public function _getRecent($count)
 	{
 		return db::select(':table:.*,UNIX_TIMESTAMP(:table:.added) `added`, :categories:.title `category_title`, :categories:.slug `category_slug`')->from('[:table:]')->leftJoin(':categories:')->on(':table:.category = :categories:.id')->orderBy('added DESC')->limit('%i', $count)->fetchAll();
 	}
 	
-	public function save($values)
+	public function _save($values)
 	{
         $values['slug'] = String::webalize($values['title']);
         if (isset($values['link']))
@@ -86,7 +86,7 @@ class Admin_PagesModel extends Admin_BaseModel
         return db::getInsertId();
 	}
 	
-	public function update($values)
+	public function _update($values)
 	{
         if(isset($values['publish_time'])) $values['publish_time'] = db::datetime($values['publish_time']);
         if(isset($values['homepage']) && $values['homepage'] == 1)
@@ -97,26 +97,29 @@ class Admin_PagesModel extends Admin_BaseModel
         db::update(':table:', $values)->where('id = %i', $values['id'])->execute();
 	}
 	
-	public function updateByTitle($values)
+	public function _updateByTitle($values)
 	{
-            if(isset($values['publish_time'])) $values['publish_time'] = db::datetime($values['publish_time']);
-            db::update(':table:', $values)->where('title = %s', $values['title'])->execute();
+        if(isset($values['publish_time'])) $values['publish_time'] = db::datetime($values['publish_time']);
+        db::update(':table:', $values)->where('title = %s', $values['title'])->execute();
 	}
 	
-	public function delete($title)
+	public function _delete($title)
 	{
-            db::delete(':table:')->where('title = %s', $title)->execute();
+        db::delete(':table:')->where('title = %s', $title)->execute();
 	}
 	
-	public function deleteById($id)
+	public function _deleteById($id)
 	{
-            return db::delete(':table:')->where('id = %i', $id)->execute();
+        return db::delete(':table:')->where('id = %i', $id)->execute();
 	}
-
-        public function MakeHomepage($title)
+    
+    /**
+     * @cache update
+     */
+    public function _MakeHomepage($title)
 	{
-            db::update(':table:',array('homepage' => 0))->where('homepage = %i', 1)->execute();
-            db::update(':table:',array('homepage' => 1))->where('title = %s', $title)->execute();
+        db::update(':table:',array('homepage' => 0))->where('homepage = %i', 1)->execute();
+        db::update(':table:',array('homepage' => 1))->where('title = %s', $title)->execute();
 	}
 }
 ?>

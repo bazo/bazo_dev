@@ -3,11 +3,10 @@ class Admin_MenuItemsPresenter extends Admin_SecurePresenter
 {
 	private /*$menu_items, $name,*/ $menu;
 	
-	public function actionDefault($name)
+	public function actionDefault($id)
 	{
-		$this->menu = $this->model('menu')->getByName($name);
-		$this->template->menus = $this->model('menu')->getAll();
-		$this->template->menu = $name;
+		$this->menu = $this->model('menu')->getById($id);
+		$this->template->menu = $this->menu->name;
 		$this->template->menu_id = $this->menu->id;
 		$this->view = 'menuitems';
 		$this->invalidateControl('form');

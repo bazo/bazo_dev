@@ -27,7 +27,16 @@ $(document).ready(function(){
 	$('#frmnew-time, #frmedit-time').livequery(function(){
 	
     });
-
+    
+    $('#frmformNewPage-content, #frmformEditPage-content').livequery(function(){
+        $(this).htmlarea();
+        var area = $(this);
+        $('div.jHtmlArea').mouseleave(function(){
+            area.htmlarea('updateTextArea');
+           area.htmlarea('updateHtmlArea'); 
+        });
+    });
+     
     $('#frmformPreviewToolbar-btnClose').live('click', function(){Shadowbox.close()});
     /*
     $('#frmformEditPage-content, #frmformNewPage-content').livequery(function(){

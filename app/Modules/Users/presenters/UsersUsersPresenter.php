@@ -73,22 +73,26 @@ class Users_UsersPresenter extends AdminBaseModulePresenter{
         $class_list = $service->list;
         $actions = array();
         foreach($class_list as $class => $file)
-        {
-            $r = new ReflectionClass($class);
-            if($r->isSubclassOf('Admin_SecurePresenter') && $r->getName() != 'BaseModulePresenter')
-            {
-                 $methods = $r->getMethods(ReflectionMethod::IS_PUBLIC);
-                 foreach($methods as $method)
-                 {
-                     if(String::lower($method->class) == $class)
+        {   
+            //zachtime annotation exception lebo nette si generuje nejake annotation claasy do robotloodera
+            try{
+                $r = new ReflectionClass($class);
+                if($r->isSubclassOf('Admin_SecurePresenter') && $r->getName() != 'BaseModulePresenter')
+                {
+                     $methods = $r->getMethods(ReflectionMethod::IS_PUBLIC);
+                     foreach($methods as $method)
                      {
-                         if( strpos($method->getName(), 'action') !== false || strpos($method->getName(), 'handle') !== false)
+                         if(String::lower($method->class) == $class)
                          {
-                             $actions[$class][] = $method->getName();
+                             if( strpos($method->getName(), 'action') !== false || strpos($method->getName(), 'handle') !== false)
+                             {
+                                 $actions[$class][] = $method->getName();
+                             }
                          }
-                     }
-                 }    
+                     }    
+                }
             }
+            catch(ReflectionException $e) {}
         }
         $actions = array_merge($actions, Environment::getApplication()->getModulesPermissions());
         $model = new UsersModuleModel();

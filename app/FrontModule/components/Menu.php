@@ -18,23 +18,24 @@ class Menu extends Control
 	
 	public function render($menu_name)
 	{
-		$template = $this->createTemplate();
+        $this->navigation->items = array();
 		$this->navigation->template->setTranslator($this->translator);
 		$menu = $this->model->getByName($menu_name);
         if($menu->template != '') $this->navigation->setTemplate(APP_DIR.$this->getPresenter()->pathToTheme.'/templates/Menus/menu-'.$menu->template.'.phtml');
         $this->navigation->template->url = $this->url;
         if($menu != false)
 		{
-			$items = $this->fillMenu($menu->id);
+			$items = $this->getItems($menu->id);
+            
 			$this->fillNavigation($items);
 			$this->navigation->render();
 		}
+        
 	}
 		
-	private function fillMenu($menu_id, $parent = 0)
+	private function getItems($menu_id, $parent = 0)
 	{
 		return $this->model->getMenuItems($menu_id);
-		
 	}
 	
 	private function fillNavigation($items)
@@ -72,10 +73,8 @@ class Menu extends Control
 				{
 					echo $e->getMessage();
 				}
-				
 			}
 		}
-			
 	}
 }
 ?>

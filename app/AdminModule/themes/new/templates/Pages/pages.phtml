@@ -1,7 +1,8 @@
 {$title = 'Pages'}
 {block #js}
 	{include #parent}
-	{widget js 'datagrid.js', 'shadowbox/shadowbox.js', 'jHtmlArea-0.7.0.min.js', 'pages.js'}
+    {*<script type="text/javascript" src="{$basePath}/js/widgets/jHtmlArea-0.7.0.js"></script>*}
+	{widget js 'datagrid.js', 'shadowbox/shadowbox.js','jHtmlArea-0.7.0.min.js', 'pages.js'}
 {/block}
 {block #css}
 	{include #parent}
@@ -16,7 +17,7 @@
 	{snippet form}
 		@{if $new == true}
             <script type="text/javascript">
-                  $('#frmformNewPage-content').htmlarea();
+                  //$('#frmformNewPage-content').htmlarea();
             </script>
 			<div id="pageEditor" class="ui-corner-all">
 				<h2>{_'New page'}</h2>
@@ -25,7 +26,7 @@
 		@{/if}
 		@{if $edit == true}
             <script type="text/javascript">
-              $('#frmformEditPage-content').htmlarea();
+              //$('#frmformEditPage-content').htmlarea();
             </script>
 			<div id="pageEditor" class="ui-corner-all">
 				<h2>{_'Edit page'} {if isset($page)}{$page}{/if}</h2>
